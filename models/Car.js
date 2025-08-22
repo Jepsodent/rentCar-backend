@@ -13,7 +13,11 @@ const carSchema = new mongoose.Schema(
       enum: ["available", "rented", "under_maintenance", "unavailable"],
       default: "available",
     },
-    image: { type: [String]},
+    images: [{
+      url: {type: String, required: true},
+      public_id: {type: String, required: true}
+    }
+    ]
   },
   { timestamps: true }
 );

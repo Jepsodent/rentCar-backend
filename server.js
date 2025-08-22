@@ -4,6 +4,7 @@ import connectDB from "./configs/db.js";
 import userRoute from "./routes/userRoute.js";
 import cookieParser from "cookie-parser";
 import adminRoute from "./routes/adminRoute.js";
+import carRoute from "./routes/carRoute.js";
 
 const app = express();
 const PORT = 4000;
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/user', userRoute);
 app.use('/api/admin', adminRoute);
+app.use('/api/car', carRoute);
 
 app.listen(PORT, () => console.log(`Server Running at  http://localhost:${PORT}`));
 
