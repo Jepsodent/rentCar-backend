@@ -5,11 +5,14 @@ import userRoute from "./routes/userRoute.js";
 import cookieParser from "cookie-parser";
 import adminRoute from "./routes/adminRoute.js";
 import carRoute from "./routes/carRoute.js";
+import connectCloudinary from "./configs/cloudinary.js";
 
 const app = express();
 const PORT = 4000;
 
 await connectDB();
+await connectCloudinary();
+
 
 app.use(express.json());
 app.use(cookieParser());
