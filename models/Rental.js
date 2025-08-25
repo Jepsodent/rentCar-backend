@@ -7,6 +7,7 @@ const rentalSchema = new mongoose.Schema({
     returnDate: {type: Date, required: true},
     totalPrice: {type: Number},
     paymentStatus: {type: Boolean, required: true, default: false},
+    status: {type: String, enum: ['active', 'canceled', 'completed'], default: 'active'}
 }, {timestamps: true});
 
 

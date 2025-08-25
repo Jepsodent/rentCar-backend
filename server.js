@@ -6,6 +6,8 @@ import cookieParser from "cookie-parser";
 import adminRoute from "./routes/adminRoute.js";
 import carRoute from "./routes/carRoute.js";
 import connectCloudinary from "./configs/cloudinary.js";
+import rentRoute from "./routes/rentRoute.js";
+
 
 const app = express();
 const PORT = 4000;
@@ -23,6 +25,7 @@ app.get('/', (req, res) => {
 app.use('/api/user', userRoute);
 app.use('/api/admin', adminRoute);
 app.use('/api/car', carRoute);
+app.use('/api/rent', rentRoute);
 
 app.listen(PORT, () => console.log(`Server Running at  http://localhost:${PORT}`));
 
